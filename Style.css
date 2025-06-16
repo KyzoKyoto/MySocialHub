@@ -1,0 +1,189 @@
+/* Styling video background */
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    transform: translateX(200px);
+}
+
+/* Container atas video */
+.container {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo */
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+/* Button - Dark Mode */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 250px;
+    padding: 12px 20px;
+    background: #1f1f1f; /* Warna button gelap */
+    border-radius: 100px;
+    margin: 30px auto;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    
+}
+
+.button span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hover Effect - Dark Mode */
+.button:hover {
+    transform: scale(1.05);
+    background-color: #333333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Active (Pressed) Effect - Dark Mode */
+.button:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    background-color: #444444;
+}
+
+/* Ripple Effect - Dark Mode */
+.button::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s, opacity 1s;
+}
+
+.button:active::after {
+    transform: scale(3);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 12px;
+    color: white;
+}
+
+/* Optional: Loading animation */
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 18px;
+    animation: fadeInOut 1.5s ease;
+    z-index: 9999;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Custom Popup Style */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+    background: #222;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    animation: popIn 0.3s ease forwards;
+}
+
+.popup-buttons {
+    margin-top: 20px;
+}
+
+.popup-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.popup-buttons button:hover {
+    transform: scale(1.1);
+}
+
+#confirmBtn {
+    background-color: #4caf50;
+    color: white;
+}
+
+#cancelBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
